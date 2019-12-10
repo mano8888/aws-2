@@ -1,0 +1,46 @@
+fdisk <dev/sda1>
+
+press n write
+press w for save
+press q for quit
+to make a file sysytem partiton to the file systemtype
+
+mkfs.ext3 /dev/sda1
+to mount that file sysytem to the filesystem type,to acces the partiiton
+first we need to craete a dir
+mkdir /work
+
+use below command
+
+mount /dev/sda1 /work
+
+to labale the partition with mount dir
+
+e2label<dev/sda1> <manoj>
+
+
+to permanent the file sysytem 
+vim /etc/fstab
+
+
+to check whther it is working or not 
+cd /wofk
+
+
+to create swapspace
+fdisk <device name>
+
+press t to change the hexa code .fro swap space hecode is 82
+give the partiition num & peess t give the hexa code num 
+press op for print 
+press w for save
+press q for quit'
+to ctaret swap with some partition 
+mkswap <device name>
+swapon <device name>
+for off the swap 
+swapoff <device name>
+to checkthe useage of swap space
+swapon -s
+free -m
+
